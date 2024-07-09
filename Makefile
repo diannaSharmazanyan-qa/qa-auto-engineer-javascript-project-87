@@ -1,5 +1,11 @@
 install:
 	npm install
 
-run:
-	src/bin/gendiff.js
+gendiff:
+	node src/bin/gendiff.js
+
+publish:
+    npm publish --dry-run
+
+lint:
+	npx eslint
