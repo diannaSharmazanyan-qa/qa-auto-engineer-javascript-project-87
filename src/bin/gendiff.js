@@ -1,6 +1,6 @@
-#!/usr/bin/env node
-const commander = require('commander');
-const program = new commander.Command();
+#!/usr/bin/env node  
+import { Command } from 'commander';
+const program = new Command();
 
 program
   .description('Compares two configuration files and shows a difference.')
