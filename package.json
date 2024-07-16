@@ -14,7 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^12.1.0",
-    "globals": "^15.8.0"
+    "fs": "^0.0.1-security",
+    "globals": "^15.8.0",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "webpack": "^5.93.0"
   },
   "devDependencies": {
     "eslint": "^9.7.0",

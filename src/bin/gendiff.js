@@ -4,6 +4,24 @@ import fs from 'fs';
 import * as path from 'node:path';
 import genDiff from './gendiff-src.js';
 
+const  searchRecursive = (dir, pattern)  => {
+  var results = [];
+  fs.readdirSync(dir).forEach(function (dirInner) {
+    dirInner = path.resolve(dir, dirInner);
+
+    var stat = fs.statSync(dirInner);
+    if (stat.isDirectory()) {
+      results = results.concat(searchRecursive(dirInner, pattern));
+    }
+
+    if (stat.isFile() && dirInner.endsWith(pattern)) {
+      results.push(dirInner);
+    }
+  });
+
+  return results;
+};
+
 const program = new Command();
 
 program
@@ -13,8 +31,8 @@ program
   .option('-f, --format [type]', 'output format')
   .arguments('<filepath1> <filepath2>')
   .action((filepath1, filepath2) => {
-    const file1 = fs.readFileSync(path.resolve(filepath1)).toString();
-    const file2 = fs.readFileSync(path.resolve(filepath2)).toString();
+    const file1 = fs.readFileSync(path.resolve(searchRecursive('./', filepath1)[0])).toString();
+    const file2 = fs.readFileSync(path.resolve(searchRecursive('./', filepath2)[0])).toString();
     const obj1 = JSON.parse(file1);
     const obj2 = JSON.parse(file2);
 
@@ -22,4 +40,4 @@ program
   });
 
 
-export default () => program.parse(process.argv);
+program.parse();
