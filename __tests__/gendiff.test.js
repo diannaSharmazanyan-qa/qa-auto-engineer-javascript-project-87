@@ -1,10 +1,17 @@
 import fs from 'fs';
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
 import { expect, test } from '@jest/globals';
 import genDiff from '../src/bin/gendiff-src.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
+
 test('flat json', () => {
-  const file1 = fs.readFileSync('__tests__/__fixtures__/file1.json').toString();
-  const file2 = fs.readFileSync('__tests__/__fixtures__/file2.json').toString();
+  const file1 = readFile('flat1.json');
+  const file2 = readFile('flat2.json');
   const obj1 = JSON.parse(file1);
   const obj2 = JSON.parse(file2);
 
