@@ -5,3 +5,6 @@
 
 ### gendiff flat json:
 [![asciicast](https://asciinema.org/a/KTPqWrrX07n3HvdjXJk2HQlex.svg)](https://asciinema.org/a/KTPqWrrX07n3HvdjXJk2HQlex)
+
+### gendiff flat yml:
+[![asciicast](https://asciinema.org/a/rZdBasW2TcGwYZ6jiyOsoYuMW.svg)](https://asciinema.org/a/rZdBasW2TcGwYZ6jiyOsoYuMW)
