@@ -1,7 +1,5 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
-import { fixupConfigRules } from "@eslint/compat";
+import globals from 'globals';
+import pluginJs from '@eslint/js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
@@ -14,7 +12,6 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: pluginJs.configs.recommended,
 });
-
 
 export default [
   {
