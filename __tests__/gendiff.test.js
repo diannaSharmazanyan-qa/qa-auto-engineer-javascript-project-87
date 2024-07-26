@@ -45,10 +45,10 @@ test('flat yaml', () => {
   );
 });
 test('--format plain', () => {
-  const file1 = readFile('flat1.yaml');
-  const file2 = readFile('flat2.yml');
-  const obj1 = parse(file1, path.extname('flat1.yaml'));
-  const obj2 = parse(file2, path.extname('flat2.yml'));
+  const file1 = readFile('filepath1.yml');
+  const file2 = readFile('filepath2.yml');
+  const obj1 = parse(file1, path.extname('filepath1.yml'));
+  const obj2 = parse(file2, path.extname('filepath2.yml'));
 
   expect(genDiff(obj1, obj2, 'plain')).toEqual(
     `Property 'follow' was removed
