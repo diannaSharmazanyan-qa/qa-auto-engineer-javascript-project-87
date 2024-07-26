@@ -11,3 +11,6 @@
 
 ### gendiff --format plain:
 [![asciicast](https://asciinema.org/a/qyzCS5pOaNAm4cscmIWDCinOM.svg)](https://asciinema.org/a/qyzCS5pOaNAm4cscmIWDCinOM)
+
+### gendiff --format json:
+[![asciicast](https://asciinema.org/a/pVrImpZVEChVFsMBZ7xHWmA1P.svg)](https://asciinema.org/a/pVrImpZVEChVFsMBZ7xHWmA1P)
