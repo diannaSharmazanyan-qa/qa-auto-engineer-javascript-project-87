@@ -32,7 +32,7 @@ program
   .version('1.0.0', '-v, --version', 'output the version number')
   .option('-f, --format [type]', 'output format')
   .arguments('<filepath1> <filepath2>')
-  .action((filepath1, filepath2) => {
+  .action((filepath1, filepath2, type) => {
     const file1 = fs.readFileSync(path.resolve(searchRecursive('./', filepath1)[0])).toString();
     const format1 = path.extname(filepath1);
     const file2 = fs.readFileSync(path.resolve(searchRecursive('./', filepath2)[0])).toString();
@@ -40,7 +40,7 @@ program
     const obj1 = parse(file1, format1);
     const obj2 = parse(file2, format2);
 
-    console.log(genDiff(obj1, obj2));
+    console.log(genDiff(obj1, obj2, type.format));
   });
 
 program.parse();

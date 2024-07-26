@@ -8,3 +8,6 @@
 
 ### gendiff flat yml:
 [![asciicast](https://asciinema.org/a/rZdBasW2TcGwYZ6jiyOsoYuMW.svg)](https://asciinema.org/a/rZdBasW2TcGwYZ6jiyOsoYuMW)
+
+### gendiff --format plain:
+[![asciicast](https://asciinema.org/a/qyzCS5pOaNAm4cscmIWDCinOM.svg)](https://asciinema.org/a/qyzCS5pOaNAm4cscmIWDCinOM)

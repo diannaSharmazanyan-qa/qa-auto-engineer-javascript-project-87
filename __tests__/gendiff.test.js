@@ -44,3 +44,16 @@ test('flat yaml', () => {
 }`,
   );
 });
+test('--format plain', () => {
+  const file1 = readFile('flat1.yaml');
+  const file2 = readFile('flat2.yml');
+  const obj1 = parse(file1, path.extname('flat1.yaml'));
+  const obj2 = parse(file2, path.extname('flat2.yml'));
+
+  expect(genDiff(obj1, obj2, 'plain')).toEqual(
+    `Property 'follow' was removed
+Property 'proxy' was removed
+Property 'timeout' was updated. From 50 to 20
+Property 'verbose' was added with value: true`,
+  );
+});
