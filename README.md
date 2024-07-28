@@ -17,7 +17,7 @@ __"Вычислитель отличий"__ : это программа, опр�
 npm i
 ```
 
-### Пример использования:
+### Пример использования
 
 ### gendiff flat json:
 [![asciicast](https://asciinema.org/a/KTPqWrrX07n3HvdjXJk2HQlex.svg)](https://asciinema.org/a/KTPqWrrX07n3HvdjXJk2HQlex)
