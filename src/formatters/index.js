@@ -10,9 +10,8 @@ const mapping = {
 };
 
 const format = (diffObject, formatName = 'stylish') => {
-  if (formatName === 'plain') return mapping.plain(diffObject);
-  if (formatName === 'json') return mapping.json(diffObject);
-  if (formatName === 'stylish') return mapping.stylish(diffObject);
+  if (Object.hasOwn(mapping, formatName)) return mapping[formatName](diffObject);
+
   return mapping.unsupported(formatName);
 };
 
