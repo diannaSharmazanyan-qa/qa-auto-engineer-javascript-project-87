@@ -6,13 +6,12 @@ const mapping = {
   json: (diffObject) => jsonFormat(diffObject),
   plain: (diffObject) => plainFormat(diffObject),
   stylish: (diffObject) => stylishFormat(diffObject),
-  unsupported: (formatName) => console.log(`Error: '${formatName}' output format is not supported`),
 };
 
 const format = (diffObject, formatName = 'stylish') => {
   if (Object.hasOwn(mapping, formatName)) return mapping[formatName](diffObject);
 
-  return mapping.unsupported(formatName);
+  return console.log(`Error: '${formatName}' output format is not supported`);
 };
 
 export default format;

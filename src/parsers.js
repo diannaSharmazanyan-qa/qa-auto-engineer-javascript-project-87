@@ -8,8 +8,6 @@ const mapping = {
 const parse = (data, format) => {
   if (Object.hasOwn(mapping, format)) return mapping[format](data);
 
-  console.log(`${format} file format is not supported.`);
-
   throw new Error(`Unsupported format ${format}`);
 };
 
