@@ -42,7 +42,7 @@ describe('genDiff tests', () => {
   testCases.forEach(({
     title, file1, file2, format = 'stylish', expected,
   }) => {
-    test(String(title), () => {
+    test(`${title}`, () => {
       const result = genDiff(getFixturePath(file1), getFixturePath(file2), format);
       expect(result.replaceAll(/\s$/gm, '')).toEqual(readFile(expected).replaceAll(/\s$/gm, ''));
     });
